@@ -1,0 +1,264 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Dosis', sans-serif;
+}
+
+.btn:focus, a:focus, button:focus {
+  outline: none;
+}
+
+a:hover{
+	text-decoration: none;
+	color: rgb(177,51,224)
+}
+
+header{
+	height: 100px;
+	color: #B133E0;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	z-index: 10000;
+}
+
+.brand{
+	background-color: #B133E0;
+	width: 400px;
+	height: 100px;
+	display: flex;
+}
+
+.brand a, h1{
+	text-decoration: none;
+	color:rgb(248,248,255);
+	font-family: Brushed Traveler, Helvetica, sans-serif;
+	font-size: 50px;
+	letter-spacing: 5px;
+	padding: 5px;
+}
+
+#btn-menu{
+	display: none;
+}
+
+header label{
+	font-size: 30px;
+	cursor: pointer;
+	display:none;
+	z-index: 1000;
+}
+
+.menu ul{
+	display: flex;
+	justify-content: flex-end;
+	list-style: none;
+	align-content: center;
+	z-index: 1000;
+	background-color: white;
+}
+
+.menu ul ul {
+	display: none;
+}
+
+.menu a{
+	display: block;
+	padding: 15px 20px;
+	color: #000;
+	text-decoration: none;
+}
+
+.menu a:hover{
+	background-color: rgb(248,248,255);
+	color: rgb(177,51,224)
+}
+
+.menu a span{
+	margin-left: 5px;
+}
+ 
+.menu ul li:hover ul {
+	display: block;
+	position: absolute;
+}
+
+/*** CONTENIDO ***/
+
+h2, h3, h4, a{
+	color: rgb(177,51,224)
+}
+
+a:hover{
+	text-decoration: none;
+	color: rgb(177,51,224)
+}
+
+ul{
+	list-style: none;
+}
+
+.contenido{
+	margin-left: 0px;
+	margin-right: 0px;
+	/*porque sino los margenes de los rows eran mas 
+	grandes que el header ya que por defecto tiene
+	margenes izq y der de -15px*/
+}
+
+.box {
+	padding: 20px;
+	transition: 0.4s;
+}
+
+.box  h2 a{
+	text-decoration: none;
+	color: rgb(177,51,224);
+
+}
+
+.box:hover{
+	background-color: #eee;
+}
+
+.destacado{
+	padding: 30px;
+	background-color: rgba(177,51,224, 0.3);
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.destacado  h2 a{
+	text-decoration: none;
+	color: rgb(177,51,224);
+}
+
+.destacado  h3 a{
+	text-decoration: none;
+	color: rgb(177,51,224);
+}
+
+.destacado span{
+	padding-right: 5px;
+	color: rgb(177,51,224);
+}
+
+/*** video ***/
+
+.video{
+	padding: 30px;
+	background-color: rgba(177,51,224, 0.3);
+}
+
+
+/**** tips ****/
+
+.popular{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+/*** MODALS ***/
+
+.form-control:focus {
+  border-color: rgb(177,51,224);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(177,51,224, 0.5);
+}
+
+/*** FOOTER ***/
+
+footer{
+	padding: 25px 0;
+}
+
+footer .redes{
+	display: flex;
+	justify-content: space-around;	
+}
+
+footer .redes a:hover{
+	background-color: rgb(177,51,224);
+	border-radius: 50%;
+}
+
+footer .footer2{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+/**** media queries  (por el momento solo header)****/
+
+@media screen and (max-width: 1092px) {
+	.brand{
+		width: 200px
+	}
+}
+
+@media screen and (max-width: 892px) {
+	.brand{
+		width: 130px;
+	}
+
+	.brand h1 a{
+		font-size: 28px;
+	}
+
+	.menu a{
+		font-size: 12px;
+	}
+
+	footer p{
+		font-size: 12px;
+	}
+}
+
+
+@media screen and (max-width: 771px ) {
+	header label{
+		display: block;
+		padding-right: 20px;
+		align-items: center;
+	}
+
+	.menu{
+		font-size: 15px;
+		position: absolute;
+		top:100px;
+		left: 0px;
+		width: 100%;
+		transform: translateX(-100%);
+		transition: all 0.4s;
+		z-index: 10;
+	}
+
+	.menu ul {
+		display: block;
+	}
+
+	.menu ul li:hover ul{
+		display: none;
+		position: static /*esto es para que el submenu
+		empuje al otro ul*/
+	}
+
+	#btn-menu:checked ~ .menu{
+		transform: translateX(0%);
+	}
+
+	.menu ul ul a{
+		padding-left: 40px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.redes{
+		padding-bottom: 15px
+	}
+
+	.footer2 {
+		display: block;
+	}
+
+}
